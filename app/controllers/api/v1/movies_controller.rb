@@ -9,6 +9,11 @@ class Api::V1::MoviesController < ApplicationController
       render json: movie 
    end 
 
+   def create 
+      movie = Movie.create(movie_params)
+      render json: movie
+   end 
+
    def update 
       movie = Movie.find(params[:id])
       movie.update(movie_params)
